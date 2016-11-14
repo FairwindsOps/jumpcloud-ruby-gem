@@ -28,9 +28,8 @@ class JumpCloud
     file = '/opt/jc/jcagent.conf'
     fail file_not_found_text(file) unless File.exists?(file)
     JSON.parse(IO.read(file))
-    rescue JSON::ParserError
-      raise "Problem parsing #{file} as JSON; it is valid JSON?"
-    end
+#    rescue JSON::ParserError
+#      raise "Problem parsing #{file} as JSON; it is valid JSON?"
   end
 
   def self.get_key_from_config
